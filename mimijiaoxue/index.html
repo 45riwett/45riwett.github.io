@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《秘密教学》免费-漫画作品信息与阅读指南</title>
+    <meta name="description" content="《秘密教学》免费阅读相关信息、作品介绍、剧情概述、角色解读与阅读指引。了解这部作品的创作背景与内容特色，找到合适的阅读途径。">
+    <meta name="keywords" content="秘密教学,秘密教学免费,秘密教学漫画,秘密教学在线阅读,秘密教学剧情,秘密教学角色">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+            background-color: #faf7f2;
+            color: #2d2a26;
+            line-height: 1.7;
+        }
+        a {
+            color: #8a5a2b;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #5f3c1a;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(145deg, #3e2c1d 0%, #2b1d12 100%);
+            padding: 18px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #d4a056;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2b1d12;
+        }
+        .logo-text {
+            color: #f2e6d5;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            color: #d4a056;
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+        .main-nav a {
+            color: #e8d9c3;
+            font-size: 0.95rem;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #d4a056;
+            color: #ffffff;
+        }
+
+        /* 首屏 */
+        .hero {
+            background: linear-gradient(120deg, #f7efe4 0%, #e4d3ba 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #e0d0b8;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 2.6rem;
+            line-height: 1.3;
+            color: #2b1d12;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .hero-content h1 .highlight {
+            color: #a8652a;
+            border-bottom: 3px solid #d4a056;
+            padding-bottom: 2px;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #5a4a37;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+        .tag {
+            background: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #6b4c28;
+            border: 1px solid #cbb088;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #7a4e22;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #5f3a18;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #5f3c1a;
+            padding: 11px 26px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid #7a4e22;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            background: #7a4e22;
+            color: #fff;
+        }
+        .hero-cover {
+            text-align: center;
+        }
+        .book-cover-placeholder {
+            width: 250px;
+            height: 350px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #8a6035, #4a3520);
+            border-radius: 12px 12px 6px 6px;
+            box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #f2e0c9;
+            position: relative;
+            border: 3px solid #c9a87a;
+        }
+        .book-cover-placeholder::before {
+            content: "秘密教学";
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 6px;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            margin-right: 10px;
+            opacity: 0.9;
+        }
+        .book-cover-placeholder::after {
+            content: "SECRET LESSON";
+            position: absolute;
+            bottom: 15px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            opacity: 0.6;
+        }
+
+        /* 信息条 */
+        .info-bar {
+            background: #f5ecdf;
+            padding: 14px 0;
+            border-bottom: 1px solid #e5d6c2;
+        }
+        .info-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: #6b5a47;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .info-item strong {
+            color: #4a3a28;
+        }
+
+        /* 内容区通用 */
+        .section {
+            padding: 50px 0;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            color: #2b1d12;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: #d4a056;
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            color: #7a6a58;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* 作品简介 */
+        .intro-section {
+            background: #ffffff;
+        }
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .intro-text p {
+            margin-bottom: 16px;
+            color: #4a3f35;
+        }
+        .intro-text p strong {
+            color: #2b1d12;
+        }
+        .intro-facts {
+            background: #faf3ea;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #d4a056;
+        }
+        .fact-list {
+            list-style: none;
+        }
+        .fact-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #dcc9b0;
+            font-size: 0.95rem;
+        }
+        .fact-list li:last-child {
+            border-bottom: none;
+        }
+        .fact-label {
+            font-weight: 600;
+            color: #7a4e22;
+            display: inline-block;
+            min-width: 90px;
+        }
+
+        /* 角色 */
+        .characters-section {
+            background: #faf7f2;
+        }
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .character-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid #d4a056;
+            transition: transform 0.3s;
+        }
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+        .character-card h3 {
+            color: #4a3520;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        .character-card .role {
+            color: #a8652a;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .character-card p {
+            font-size: 0.9rem;
+            color: #5a4a37;
+        }
+
+        /* 剧情与看点 */
+        .story-section {
+            background: #fff;
+        }
+        .story-blocks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .story-block {
+            background: #fcf8f2;
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid #eee1d0;
+        }
+        .story-block h3 {
+            color: #5f3c1a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .story-block h3 .num {
+            background: #7a4e22;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+        .story-block p {
+            color: #4a3f35;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #f5ecdf;
+        }
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #3e2c1d;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-question::before {
+            content: "Q";
+            background: #d4a056;
+            color: #2b1d12;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .faq-answer {
+            color: #5a4a37;
+            font-size: 0.95rem;
+            padding-left: 34px;
+        }
+
+        /* 阅读指引 */
+        .guide-section {
+            background: #2b1d12;
+            color: #e8d9c3;
+        }
+        .guide-section .section-title {
+            color: #f2e6d5;
+        }
+        .guide-section .section-title::after {
+            background: #d4a056;
+        }
+        .guide-section .section-subtitle {
+            color: #c0ab90;
+        }
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .guide-step {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 28px 24px;
+            border: 1px solid rgba(212, 160, 86, 0.3);
+            text-align: center;
+        }
+        .step-num {
+            width: 48px;
+            height: 48px;
+            background: #d4a056;
+            color: #2b1d12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0 auto 16px;
+        }
+        .guide-step h3 {
+            color: #f2e6d5;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .guide-step p {
+            color: #cbb79e;
+            font-size: 0.9rem;
+        }
+
+        /* 注意事项 */
+        .notice-section {
+            background: #fff;
+        }
+        .notice-box {
+            background: #fdf8f0;
+            border: 1px solid #e5d3b8;
+            border-radius: 12px;
+            padding: 28px;
+            border-left: 5px solid #8a5a2b;
+        }
+        .notice-box h3 {
+            color: #4a3520;
+            margin-bottom: 16px;
+        }
+        .notice-box ul {
+            padding-left: 20px;
+            color: #5a4a37;
+        }
+        .notice-box li {
+            margin-bottom: 10px;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #1f160d;
+            color: #a6957e;
+            padding: 40px 0 30px;
+            font-size: 0.9rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-about {
+            max-width: 400px;
+        }
+        .footer-about h4 {
+            color: #d4a056;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .footer-links h4 {
+            color: #d4a056;
+            margin-bottom: 12px;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            color: #b3a189;
+        }
+        .footer-links a:hover {
+            color: #d4a056;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3a2b1e;
+            padding-top: 20px;
+            color: #8a7a65;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-tags {
+                justify-content: center;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .book-cover-placeholder {
+                margin-top: 20px;
+            }
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .characters-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .story-blocks {
+                grid-template-columns: 1fr;
+            }
+            .guide-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+            .main-nav a {
+                font-size: 0.85rem;
+            }
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .characters-grid {
+                grid-template-columns: 1fr;
+            }
+            .guide-steps {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 35px 0;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+            .book-cover-placeholder {
+                width: 200px;
+                height: 280px;
+            }
+            .info-bar-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .faq-item {
+                padding: 16px;
+            }
+            .faq-answer {
+                padding-left: 0;
+                margin-top: 6px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <div class="logo-icon">秘</div>
+            <div class="logo-text">秘密教学<span>·</span>漫研社</div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#intro">作品简介</a></li>
+                <li><a href="#characters">主要角色</a></li>
+                <li><a href="#story">剧情看点</a></li>
+                <li><a href="#guide">阅读指引</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>《秘密教学》<span class="highlight">免费阅读</span>指南</h1>
+                <p class="hero-desc">
+                    深入探索这部备受关注的漫画作品。从故事背景、人物关系到阅读渠道，这里为你提供完整的信息参考与指引。
+                </p>
+                <div class="hero-tags">
+                    <span class="tag">📖 剧情向</span>
+                    <span class="tag">🎭 角色群像</span>
+                    <span class="tag">🔍 悬疑元素</span>
+                    <span class="tag">💬 热议作品</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="#guide" class="btn-primary">如何开始阅读</a>
+                    <a href="#intro" class="btn-outline">了解作品详情</a>
+                </div>
+            </div>
+            <div class="hero-cover">
+                <div class="book-cover-placeholder"></div>
+                <p style="margin-top: 15px; color: #7a6a58; font-size: 0.9rem; letter-spacing: 2px;">—— 作品印象 ——</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 信息条 -->
+    <div class="info-bar">
+        <div class="container info-bar-inner">
+            <div class="info-item"><strong>作品类型：</strong> 漫画 · 剧情 / 校园</div>
+            <div class="info-item"><strong>关键词：</strong> 秘密教学 免费</div>
+            <div class="info-item"><strong>适合读者：</strong> 喜欢校园故事与悬疑氛围的读者</div>
+        </div>
+    </div>
+
+    <!-- 作品简介 -->
+    <section class="section intro-section" id="intro">
+        <div class="container">
+            <h2 class="section-title">作品简介</h2>
+            <p class="section-subtitle">了解《秘密教学》的基本情况与核心设定</p>
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <p>
+                        《秘密教学》是一部围绕校园与成长主题展开的漫画作品。故事以一所普通学校为舞台，通过几位主角的视角，逐步揭示隐藏在日常生活表象之下的秘密与纠葛。作品融合了青春期的情感探索、人际关系变化以及带有悬念色彩的情节推进，吸引了大量关注剧情发展的读者。
+                    </p>
+                    <p>
+                        作品名称中的“秘密”与“教学”构成了双重意象：既有字面意义上课堂内外的师生互动，也有更深层次中人物之间相互影响、彼此“教导”人生课题的隐喻。这种叙事结构让作品在看似平和的校园背景下，暗藏着丰富的情感张力。
+                    </p>
+                    <p>
+                        对于搜索“秘密教学免费”的读者来说，了解这部作品的台前幕后、角色关系以及正确的阅读途径，是快速进入故事世界的第一步。
+                    </p>
+                </div>
+                <div class="intro-facts">
+                    <ul class="fact-list">
+                        <li><span class="fact-label">作品名称</span> 秘密教学</li>
+                        <li><span class="fact-label">题材类型</span> 校园、剧情、悬疑</li>
+                        <li><span class="fact-label">阅读形式</span> 漫画（彩色/黑白章节）</li>
+                        <li><span class="fact-label">内容主题</span> 青春成长、秘密探索、人际关系</li>
+                        <li><span class="fact-label">读者群体</span> 青年向、喜欢故事性漫画的读者</li>
+                        <li><span class="fact-label">内容特点</span> 注重心理描写、角色互动丰富</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要角色 -->
+    <section class="section characters-section" id="characters">
+        <div class="container">
+            <h2 class="section-title">主要角色</h2>
+            <p class="section-subtitle">人物关系是理解《秘密教学》的关键钥匙</p>
+            <div class="characters-grid">
+                <div class="character-card">
+                    <h3>主角 · 知夏</h3>
+                    <span class="role">故事核心视角</span>
+                    <p>一名看似普通的学生，因一次偶然的事件被卷入校园中的隐秘漩涡。她敏锐而细腻，逐渐发现身边人隐藏的多重面貌。</p>
+                </div>
+                <div class="character-card">
+                    <h3>关键角色 · 老师</h3>
+                    <span class="role">亦师亦友的存在</span>
+                    <p>在课堂内外都给予主角重要引导的角色。他的言行中总是透露出超乎寻常的洞察力，似乎知晓很多不为人知的往事。</p>
+                </div>
+                <div class="character-card">
+                    <h3>挚友 · 小满</h3>
+                    <span class="role">温暖与陪伴</span>
+                    <p>主角最亲近的朋友，性格开朗直率。在扑朔迷离的事件中，她是最稳定的情感支撑，也是连接不同线索的桥梁。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 剧情与看点 -->
+    <section class="section story-section" id="story">
+        <div class="container">
+            <h2 class="section-title">剧情看点与解析</h2>
+            <p class="section-subtitle">为什么这部作品值得关注？</p>
+            <div class="story-blocks">
+                <div class="story-block">
+                    <h3><span class="num">1</span> 层层递进的悬念设置</h3>
+                    <p>《秘密教学》的叙事节奏张弛有度。故事从细微的异常切入，一步步揭示背后的真相。每一话都可能埋下新的伏笔，让读者在解谜过程中获得持续的阅读满足感。</p>
+                </div>
+                <div class="story-block">
+                    <h3><span class="num">2</span> 细腻的人物成长弧线</h3>
+                    <p>作者在人物塑造上不遗余力。主角从懵懂到成熟的心路历程，配角们各自背负的秘密与动机，都让整个故事显得立体而真实。读者可以在角色身上看到自己的影子。</p>
+                </div>
+                <div class="story-block">
+                    <h3><span class="num">3</span> 校园氛围的真实还原</h3>
+                    <p>无论是教室里的低声交谈、放学后的走廊，还是社团活动中的互动，场景描写都充满了生活气息。这种真实感让超乎寻常的剧情有了坚实的落地基础。</p>
+                </div>
+                <div class="story-block">
+                    <h3><span class="num">4</span> 多线叙事的交织魅力</h3>
+                    <p>故事并不局限于主角单线推进，而是通过不同角色的视角切换，逐渐拼凑出事件的全貌。这种多线叙事手法增加了阅读的层次感与重读价值。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 阅读指引 -->
+    <section class="section guide-section" id="guide">
+        <div class="container">
+            <h2 class="section-title">如何开启阅读</h2>
+            <p class="section-subtitle">关于“秘密教学免费”阅读的实用指引</p>
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <div class="step-num">1</div>
+                    <h3>确认作品来源</h3>
+                    <p>首先确认你关注的《秘密教学》是否为正版授权作品。了解其发布平台与连载状态，有助于获得稳定的阅读体验。</p>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">2</div>
+                    <h3>选择正规渠道</h3>
+                    <p>通过官方漫画平台或授权阅读应用进行阅读。这些平台通常会提供清晰的画质和及时的内容更新，同时支持创作者。</p>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">3</div>
+                    <h3>关注阅读体验</h3>
+                    <p>注意合理安排阅读时间，关注视力健康。部分平台支持夜间模式与字体调整，可根据个人习惯进行设置。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <p class="section-subtitle">读者最关心的几个话题</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">《秘密教学》是免费阅读的吗？</div>
+                    <div class="faq-answer">是否免费取决于具体的发布平台和章节策略。许多正版平台会提供部分免费章节供试读，后续内容可能通过平台机制解锁。建议以各官方渠道的实时说明为准。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">这部作品目前更新到什么进度？</div>
+                    <div class="faq-answer">作品的连载进度会随时间变化。具体的最新话数、更新频率和是否完结，请通过官方平台或作品主页查看最新公告。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">有哪些类似的漫画可以推荐？</div>
+                    <div class="faq-answer">如果你喜欢《秘密教学》的校园悬疑与成长主题，可以关注同类型中注重心理描写与剧情铺垫的校园漫画作品，许多平台也有相关标签可供探索。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何支持作者和作品？</div>
+                    <div class="faq-answer">在正版平台阅读、购买单行本或参与官方互动都是支持创作者的直接方式。尊重版权，拒绝盗版，是每位读者都能做出的贡献。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 注意事项 -->
+    <section class="section notice-section" id="notice">
+        <div class="container">
+            <div class="notice-box">
+                <h3>⚠️ 阅读提示与版权说明</h3>
+                <ul>
+                    <li>请通过正规授权的漫画平台阅读《秘密教学》，以保证内容质量与更新稳定性。</li>
+                    <li>网络上流传的所谓“免费资源”可能存在画质损失、内容不完整或安全风险，请谨慎对待。</li>
+                    <li>本页面仅提供作品介绍与信息参考，不提供任何形式的盗版内容或下载链接。</li>
+                    <li>尊重创作者的劳动成果，支持正版，才能让优秀作品持续产出。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>关于本站</h4>
+                <p>本站是一个专注于漫画作品信息分享与阅读指南的静态页面。我们致力于为读者提供清晰、客观的作品背景介绍，帮助大家找到合适的阅读路径。</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#intro">作品简介</a></li>
+                    <li><a href="#characters">主要角色</a></li>
+                    <li><a href="#story">剧情看点</a></li>
+                    <li><a href="#guide">阅读指引</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>内容说明</h4>
+                <ul>
+                    <li><a href="#notice">版权声明</a></li>
+                    <li><a href="#notice">阅读提示</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 秘密教学信息页 · 本页面为静态演示内容，仅供学习与交流使用</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
